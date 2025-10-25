@@ -9,7 +9,12 @@ const workdayMessages = [
     'Revisou aquele pull request que tá parado?',
     'Organizou o backlog antes da daily?',
     'Criou documentação do projeto hoje?',
-    'Testes automatizados em dia, ou só na promessa?'
+    'Testes automatizados em dia, ou só na promessa?',
+    'Checou se a feature está ativada só para staging mesmo?',
+    'Atualizou as dependências ou vai deixar para o próximo sprint?',
+    'Já pediu ajuda antes de perder o dia inteiro no bug?',
+    'Fez o handoff direitinho pro time de QA?',
+    'Lembrou de hidratar e alongar entre commits?'
 ];
 
 const weekendMessages = [
@@ -17,7 +22,12 @@ const weekendMessages = [
     'Tá trabalhando hoje, é porque é desorganizado.',
     'Deploy só segunda, certo?',
     'Descansa que o merge pode esperar.',
-    'Se precisar trabalhar, que seja no controle da playlist.'
+    'Se precisar trabalhar, que seja no controle da playlist.',
+    'Se o bug vive só no seu sonho, deixa pra segunda.',
+    'Nada de stand-up hoje, só deitado no sofá.',
+    'O melhor deploy de sábado é o de pizza no delivery.',
+    'Hoje o backlog chama churrasco com os amigos.',
+    'Seu pull request agora é puxar o cobertor.'
 ];
 
 // Mensagens contextuais suaves para complementar o humor principal.
@@ -25,12 +35,18 @@ const subtitles = {
     weekday: [
         'Hoje é dia de construir com calma e qualidade.',
         'Colabora com o time e deixa a esteira rodando.',
-        'Evita débito técnico: futuro você agradece.'
+        'Evita débito técnico: futuro você agradece.',
+        'Code review honesto salva tempo lá na frente.',
+        'Breakpoints são amigos, mas use com propósito.',
+        'Celebrar pequenas entregas mantém a motivação.'
     ],
     weekend: [
         'Respira fundo: backlog nenhum manda aqui.',
         'A cabeça precisa descansar para entregar melhor depois.',
-        'Energia recarregada rende sprint mais leve.'
+        'Energia recarregada rende sprint mais leve.',
+        'Silenciar as notificações também é produtividade.',
+        'O modo avião do notebook chama-se desligar.',
+        'Compartilhar risadas recarrega mais que café.'
     ]
 };
 
