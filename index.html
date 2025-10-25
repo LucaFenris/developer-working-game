@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Landing page leve e responsiva para lembrar desenvolvedores das prioridades da semana.">
+    <title>Developer Working Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background"></div>
+    <header class="site-header">
+        <div class="brand">
+            <span class="brand-dot" aria-hidden="true"></span>
+            <p class="brand-text">developer working game</p>
+        </div>
+    </header>
+
+    <main class="content" id="status">
+        <section class="card" role="status" aria-live="polite">
+            <p class="card-label">Hoje é <span id="weekday">...</span></p>
+            <h1 class="card-title" id="main-message">carregando...</h1>
+            <p class="card-subtitle" id="card-subtitle">Respira, toma um café e segue o fluxo.</p>
+            <button id="refresh" type="button" class="primary-action">traz outra verdade</button>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p class="footer-text">Feito com Foco e Café — <span class="footer-year" id="footer-year"></span></p>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
