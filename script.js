@@ -3,6 +3,7 @@ const messageEl = document.getElementById('main-message');
 const subtitleEl = document.getElementById('card-subtitle');
 const refreshButton = document.getElementById('refresh');
 const footerYearEl = document.getElementById('footer-year');
+const isStatusPage = Boolean(weekdayEl && messageEl && subtitleEl && refreshButton);
 
 const workdayMessages = [
     'Você já fez seu commit diário?',
@@ -82,6 +83,10 @@ function pickRandomDifferent(items, currentValue) {
 }
 
 function updateUI() {
+    if (!isStatusPage) {
+        return;
+    }
+
     const today = new Date();
     const weekdayIndex = today.getDay();
     const isWeekend = weekdayIndex === 0 || weekdayIndex >= 5;
@@ -96,6 +101,10 @@ function updateUI() {
 }
 
 function triggerMessageUpdate() {
+    if (!isStatusPage) {
+        return;
+    }
+
     refreshButton.disabled = true;
     updateUI();
 
@@ -103,29 +112,32 @@ function triggerMessageUpdate() {
         refreshButton.disabled = false;
     }, 320);
 }
-
-refreshButton.addEventListener('click', triggerMessageUpdate);
-
-document.addEventListener('keydown', (event) => {
-    if (event.code !== 'Space' && event.key !== ' ') {
-        return;
-    }
-
-    const activeTag = document.activeElement?.tagName;
-    if (activeTag === 'INPUT' || activeTag === 'TEXTAREA' || document.activeElement?.isContentEditable) {
-        return;
-    }
-
-    event.preventDefault();
-
-    if (!refreshButton.disabled) {
-        triggerMessageUpdate();
-    }
-});
-
 function init() {
-    footerYearEl.textContent = new Date().getFullYear();
+    if (footerYearEl) {
+        footerYearEl.textContent = new Date().getFullYear();
+    }
     updateUI();
+}
+
+if (isStatusPage) {
+    refreshButton.addEventListener('click', triggerMessageUpdate);
+
+    document.addEventListener('keydown', (event) => {
+        if (event.code !== 'Space' && event.key !== ' ') {
+            return;
+        }
+
+        const activeTag = document.activeElement?.tagName;
+        if (activeTag === 'INPUT' || activeTag === 'TEXTAREA' || document.activeElement?.isContentEditable) {
+            return;
+        }
+
+        event.preventDefault();
+
+        if (!refreshButton.disabled) {
+            triggerMessageUpdate();
+        }
+    });
 }
 
 if (document.readyState === 'loading') {

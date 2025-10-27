@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mini game para aliviar a rotina dev derrubando tarefas antes que virem incêndio.">
+    <title>Developer Working Game — Modo tiro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background"></div>
+    <header class="site-header">
+        <div class="brand">
+            <span class="brand-dot" aria-hidden="true"></span>
+            <p class="brand-text">developer working game</p>
+        </div>
+        <nav class="site-nav" aria-label="Seções do site">
+            <a href="index.html" class="nav-link">Status diário</a>
+            <a href="game.html" class="nav-link is-active">Modo tiro</a>
+        </nav>
+    </header>
+
+    <main class="content">
+        <section class="card game-card" aria-live="polite">
+            <div class="game-card__intro">
+                <h1 class="card-title">Modo tiro do desenvolvedor</h1>
+                <p class="card-subtitle">Movimente a mira, clique ou use a barra de espaço para derrubar tarefas antes que desçam demais.</p>
+            </div>
+
+            <div class="game-hud" role="status" aria-live="polite">
+                <p class="game-hud__item">Pontuação: <span id="score">0</span></p>
+                <p class="game-hud__item">Pendências vazadas: <span id="misses">0</span></p>
+                <p class="game-hud__item">Foco restante: <span id="lives">3</span></p>
+            </div>
+
+            <div class="game-area" id="game-area" aria-label="Área do jogo" tabindex="0">
+                <div class="crosshair" id="crosshair" aria-hidden="true"></div>
+            </div>
+
+            <p class="game-status" id="game-status">Aperte "Reiniciar rodada" para começar ou continue de onde parou.</p>
+
+            <div class="game-controls">
+                <button id="start-game" type="button" class="primary-action">Reiniciar rodada</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p class="footer-text">Feito com Foco e Café — <span class="footer-year" id="footer-year"></span></p>
+    </footer>
+
+    <script src="script.js" defer></script>
+    <script src="game.js" defer></script>
+</body>
+</html>
